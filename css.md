@@ -4,6 +4,34 @@ Melhor Envio CSS Style Guide
 *Diretrizes de organização e escrita de CSS*
 
 
+## Índice
+
+- [Pré-processador](#pré-processador)
+- [Estrutura de pastas](#estrutura-de-pastas)
+- [Indentação](#indentação)
+- [Sintaxe](#sintaxe)
+- [Naming convention](#naming-convention)
+	+ [Classes](#classes)
+	+ [Variáveis](#variáveis)
+- [Regras gerais](#regras-gerais)
+	+ [Nesting](#nesting)
+	+ [Múltiplos seletores](#múltiplos-seletores)
+	+ [@extend primeiro, estilos "regulares" depois](#extend-primeiro-estilos-regulares-depois)
+	+ [Pseudo-classes e pseudo-elementos depois](#pseudo-classes-e-pseudo-elementos-depois)
+	+ [Modifiers e elements depois](#modifiers-e-elements-depois)
+	+ [Nested selectors por último](#nested-selectors-por-último)
+	+ [Unidades](#unidades)
+	+ [Zero à esquerda](#zero-à-esquerda)
+	+ [Separadores de valores](#separadores-de-valores)
+	+ [Cores](#cores)
+	+ [Border](#border)
+	+ [Z-index](#z-index)
+	+ [Media queries](#media-queries)
+	+ [Vendor prefixes](#vendor-prefixes)
+	+ [DRY](#dry)
+- [Licença](#licença)
+
+
 ## Pré-processador
 
 O pré-processador utilizado é o [Stylus](https://stylus-lang.com/), escolhido pela sua flexibilidade, rapidez e facilidade.
@@ -176,7 +204,7 @@ $theme-primary = #0550a0
 ```
 
 
-### Multiplos seletores
+### Múltiplos seletores
 
 Cada seletor deve ter sua própria linha, sem necessidade de `,` como separador, para facilitar a legibilidade e debugging.
 
@@ -519,3 +547,16 @@ Evite declarações shorthand desnecessáriamente.
 .foo
 	margin-bottom 20px
 ```
+
+
+## Licença
+
+(The MIT License)
+
+Copyright 2020 Melhor Envio
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

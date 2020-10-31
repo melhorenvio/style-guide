@@ -14,8 +14,11 @@ Melhor Envio CSS Style Guide
 	+ [Classes](#classes)
 	+ [Variáveis](#variáveis)
 - [Regras gerais](#regras-gerais)
+	+ [Ordem de importação](#ordem-de-importação)
+	+ [Espaçamento](#espaçamento)
 	+ [Nesting](#nesting)
 	+ [Múltiplos seletores](#múltiplos-seletores)
+	+ [Alinhamentos](#alinhamentos)
 	+ [@extend primeiro, estilos "regulares" depois](#extend-primeiro-estilos-regulares-depois)
 	+ [Pseudo-classes e pseudo-elementos depois](#pseudo-classes-e-pseudo-elementos-depois)
 	+ [Modifiers e elements depois](#modifiers-e-elements-depois)
@@ -169,6 +172,110 @@ $theme-primary = #0550a0
 
 ## Regras gerais
 
+### Ordem de importação
+
+Vendors primeiro, core depois, componentes depois, partials por último.
+
+**Certo**
+
+```styl
+// Vendors
+@import 'mantis-toolkit'
+@import 'mantis-equalizr'
+...
+
+// Core
+@import 'core/mixins'
+@import 'core/config'
+...
+
+// Components
+@import 'components/colors'
+@import 'components/spacing'
+...
+
+// Partials
+@import 'partials/home'
+@import 'partials/contact'
+...
+```
+
+
+### Espaçamento
+
+Deve se manter uma linha (apenas) de espaçamento após um conjunto de variáveis ou regras.
+
+**Errado**
+
+```styl
+
+// Component variables
+
+$foo-top = 10px
+$bar-padding = 20px
+$baz-margin = 0
+// Component foo
+.foo
+	position absolute
+	top $foo-top
+	&__bar
+		padding $bar-padding
+// Component baz
+.baz
+	margin $baz-margin
+```
+
+**Errado**
+
+```styl
+// Component variables
+
+$foo-top = 10px
+
+$bar-padding = 20px
+
+$baz-margin = 0
+
+
+// Component foo
+
+.foo
+	position absolute
+	top $foo-top
+
+
+	&__bar
+		padding $bar-padding
+
+
+// Component baz
+
+.baz
+	margin $baz-margin
+```
+
+**Certo**
+
+```styl
+// Component variables
+$foo-top = 10px
+$bar-padding = 20px
+$baz-margin = 0
+
+// Component foo
+.foo
+	position absolute
+	top $foo-top
+
+	&__bar
+		padding $bar-padding
+
+// Component baz
+.baz
+	margin $baz-margin
+```
+
+
 ### Nesting
 
 **Errado**
@@ -222,6 +329,41 @@ Cada seletor deve ter sua própria linha, sem necessidade de `,` como separador,
 .bar
 .baz
 	display block
+```
+
+
+### Alinhamentos
+
+Não usar alinhamentos, de nenhum tipo.
+
+**Errado**
+
+```styl
+$size-huge     = 80px
+$space-wide    = 40px
+$theme-primary = #0550a0
+
+.foo
+	position absolute
+	top    0
+	bottom 0
+	right  0
+	left   0
+```
+
+**Certo**
+
+```styl
+$size-huge = 80px
+$space-wide = 40px
+$theme-primary = #0550a0
+
+.foo
+	position absolute
+	top 0
+	bottom 0
+	right 0
+	left 0
 ```
 
 
